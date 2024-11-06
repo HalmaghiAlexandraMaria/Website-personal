@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experience in the Field</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="experience.css">
+</head>
+<body>
+    <div class="navbar">
+        <a href="index.html">
+            <i class="fas fa-home"></i>
+            Home
+        </a>
+        <a href="About me.html" class="active">
+            <i class="fas fa-user"></i>
+            About me
+        </a>
+        <a href="About me.html" onclick="goBack()">
+            <i class="fas fa-arrow-left"></i>
+            Back
+        </a>
+        <a href="login.html">
+            <i class="fas fa-sign-out-alt"></i>
+            Log out
+        </a>
+    </div>
+    <div class="content">
+        <h1>Experience in the field</h1>
+        <div class="experience">
+            <div class="experience-item">
+                <img alt="Capgemini Engineering logo" src="capgemini-logo.jpg" height="200" width="200"/>
+                <h2>Capgemini Engineering<br/>Brasov</h2>
+                <p>Summer practice<br/>(08.07.2024 - 26.07.2024)</p>
+            </div>
+            <div class="experience-item">
+                <img alt="Java Explorer Digital Nation logo" src="DigitalNation.png" height="200" width="200"/>
+                <h2>Java Explorer<br/>Digital Nation</h2>
+                <p>Apprenticeship<br/>(Sep 2023 - Jan 2024)</p>
+            </div>
+        </div>
+    </div>
+    <div class="arrow" id="nextPageBtn">
+        <i class="fas fa-arrow-circle-right"></i>
+    </div>
+</body>
+</html>
+
+<script>
+    document.getElementById('nextPageBtn').addEventListener('click', function() {
+        document.body.style.opacity = '0';
+        document.body.style.transform = 'translateX(-100%)';
+        setTimeout(function() {
+            window.location.href = 'About me3.html';
+        }, 500);
+    });
+    
+    document.addEventListener('DOMContentLoaded', function() {
+        document.body.style.opacity = '1';
+        document.body.style.transform = 'translateX(0)';
+    });
+    </script>

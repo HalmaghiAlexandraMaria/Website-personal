@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login / Register</title>
+    <link rel="stylesheet" type="text/css" href="login.css">
+</head>
+<body>
+    <div class="login-register-container">
+        <div class="form-slider">
+            <!-- Login Form -->
+            <div class="login-container">
+                <h2>Login</h2>
+                <form method="POST" action="index.html">
+                    <div class="formEntry">
+                        <label for="user">Username:</label>
+                        <input type="text" id="user" name="user" required>
+                        
+                        <label for="password">Password:</label>
+                        <input type="password" id="password" name="password" required>
+                        
+                        <button type="submit" name="login">Login</button>
+                    </div>
+                </form>
+                <p class="redirect-text">Don't have an account? <span class="bold-link" id="go-register">Register</span></p>
+            </div>
+
+            <!-- Register Form -->
+            <div class="register-container">
+                <h2>Registration</h2>
+                <form method="POST" action="register.php">
+                    <div class="formEntry">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required>
+
+                        <label for="new_user">Username:</label>
+                        <input type="text" id="new_user" name="new_user" required>
+                        
+                        <label for="new_password">Password:</label>
+                        <input type="password" id="new_password" name="new_password" required>
+                        
+                        <button type="submit" name="register">Register</button>
+                    </div>
+                </form>
+                <p class="redirect-text">Already have an account? <span class="bold-link" id="go-login">Login</span></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="login.js"></script>
+</body>
+</html>

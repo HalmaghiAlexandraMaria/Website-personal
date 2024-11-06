@@ -1,0 +1,188 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
+    position: relative; /* Permite poziționarea absolută a imaginii */
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    opacity: 0;
+    transform: translateX(100%);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #ccc;
+    height: 60px; /* Înălțimea fixă a barei de navigare */
+    background-color: #fff;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #000;
+    font-size: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s ease;
+}
+.navbar a:hover {
+    transform: scale(1.1);
+}
+
+.navbar a:active {
+    transform: scale(0.95);
+}
+
+.navbar a i {
+    font-size: 24px;
+    margin-bottom: 5px;
+    transition: transform 0.3s ease;
+}
+.navbar a:hover i {
+    transform: scale(1.2);
+}
+
+.navbar a:active i {
+    transform: scale(0.9);
+}
+
+.navbar a.active {
+    color: #00aaff;
+}
+
+/* Conținut principal */
+.content {
+    display: flex;
+    justify-content: space-between;
+    padding: 40px;
+}
+
+.left-content {
+    width: 60%;
+}
+
+.right-content {
+    width: 35%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Citat */
+.quote {
+    font-size: 28px;
+    color: #5a2d0c;
+    margin-bottom: 30px;
+}
+
+.quote i {
+    font-size: 40px;
+    vertical-align: middle;
+}
+
+/* Harta */
+.map {
+    margin-bottom: 20px;
+    height: 350px;
+    width: 100%;
+    max-width: 650px;
+    background-color: #e0e0e0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #ccc;
+}
+
+/* Locații */
+.locations {
+    text-align: center;
+    font-size: 22px;
+    margin: 20px 0;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+    width: 100%;
+    max-width: 650px;
+    margin-left: auto;
+    margin-right: auto;
+    color:#5a2d0c
+}
+.left-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Pasiuni */
+.passions {
+    background: linear-gradient(135deg, #e0e0e0, #c0c0c0); /* Gradient subtil */
+    padding: 30px;
+    border-radius: 10px;
+    font-size: 22px;
+    text-align: center;
+    margin-top: 30px; 
+    margin-bottom: 30px;
+    position: relative;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: pulse 5s infinite; /* Pulsare lentă */
+}
+.passions:hover {
+    background-color: rgba(128, 128, 128, 0.3); /* Culoare mai închisă la hover */
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3); /* Umbră mai pronunțată la hover */
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.02);
+    }
+}
+
+.icons {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #5a2d0c;
+    margin-right: 10px;
+}
+
+
+.passions::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('https://placehold.co/300x300/e0e0e0/e0e0e0.png?text=') no-repeat center center;
+    background-size: cover;
+    opacity: 0.5;
+    z-index: -1;
+    border-radius: 10px;
+}
+
+.passions img {
+    width: 160px;
+    height: auto;
+    margin-top: 30px;
+    border-radius: 10px; /* Opțional: Adaugă colțuri rotunjite pentru a se potrivi cu alte elemente */
+}
+
+/* Săgeată de navigare */
+.arrow {
+    position: fixed;
+    bottom: 5px;
+    right: 35px;
+    font-size: 40px;
+    color: #5a2d0c;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.arrow:hover {
+    transform: scale(1.1);
+}
