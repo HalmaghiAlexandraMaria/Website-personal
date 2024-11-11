@@ -1,0 +1,97 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+.navbar {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #ccc;
+    height: 60px; /* Înălțimea fixă a barei de navigare */
+    background-color: #fff;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #000;
+    font-size: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s ease;
+}
+.navbar a:hover {
+    transform: scale(1.1);
+}
+
+.navbar a:active {
+    transform: scale(0.95);
+}
+
+.navbar a i {
+    font-size: 24px;
+    margin-bottom: 5px;
+    transition: transform 0.3s ease;
+}
+.navbar a:hover i {
+    transform: scale(1.2);
+}
+
+.navbar a:active i {
+    transform: scale(0.9);
+}
+
+.navbar a.active {
+    color: #00aaff;
+}
+.content {
+    padding: 40px;
+}
+.content h1 {
+    color: #5a3b1a;
+    font-size: 48px;
+    margin-bottom: 50px;
+}
+.experience {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+}
+.experience-item {
+    text-align: center;
+}
+.experience-item img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-color: #ccc;
+    padding: 20px;
+}
+.experience-item h2 {
+    color: #007bff;
+    font-size: 24px;
+    margin: 20px;
+}
+.experience-item p {
+    font-size: 20px;
+    color: #000;
+    margin: 5px 30px;
+}
+
+/* Săgeată de navigare */
+.arrow {
+    position: fixed;
+    bottom: 40px;
+    right: 35px;
+    font-size: 40px;
+    color: #5a2d0c;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.arrow:hover {
+    transform: scale(1.1);
+}

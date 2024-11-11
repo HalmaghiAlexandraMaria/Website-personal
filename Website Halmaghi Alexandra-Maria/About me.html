@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>About Me</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="style_about.css">
+</head>
+<body>
+    <!-- Bara de navigare modificată pentru a respecta același stil -->
+    <div class="navbar">
+        <a href="index.html">
+            <i class="fas fa-home"></i>
+            Home
+        </a>
+        <a href="About me.html" class="active">
+            <i class="fas fa-user"></i>
+            About me
+        </a>
+        <a href="index.html" onclick="goBack()">
+            <i class="fas fa-arrow-left"></i>
+            Back
+        </a>
+        <a href="login.html">
+            <i class="fas fa-sign-out-alt"></i>
+            Log out
+        </a>
+    </div>
+
+    <div class="content">
+        <div class="left-content">
+            <div class="quote">
+                <i class="fas fa-quote-left"></i>
+                <span>Today will never happen again! Make it count!</span>
+            </div>
+            <div class="map" id="map">
+                <!-- Map will be embedded here -->
+            </div>
+            <div class="locations">A few locations visited</div>
+        </div>
+        <div class="right-content">
+            <img alt="Personal image" src="Girl.png" width="300" style="margin-top: 60px;">           
+            <div class="passions">
+                <div class="icons">
+                    <i class="fas fa-plane" ></i>
+                    <i class="fas fa-code" ></i>
+                    <i class="fas fa-book" ></i>
+                </div>
+                My main passions are traveling, programming and reading.
+            </div>
+        </div>
+    </div>
+    <div class="arrow" id="nextPageBtn">
+        <i class="fas fa-arrow-circle-right"></i>
+    </div>
+
+    <script>
+        function initMap() {
+            const center = { lat: 45.9432, lng: 24.9668 };
+            const map = new google.maps.Map(document.getElementById("map"), {
+                zoom: 5, // Am mărit puțin zoom-ul pentru a vedea mai bine și Roma
+                center: center,
+            });
+            const locations = [
+                { lat: 46.77083620379456, lng: 23.59176346874761 }, // Muzeul de Artă Cluj
+                { lat: 45.63873111877255, lng: 25.581490805833095 }, // Muzeul Prima Școală Românească
+                { lat: 45.69051346921881, lng: 24.794927208966296 }, // Mănăstirea Brâncoveanu
+                { lat: 46.58776563092693, lng: 23.785492925726963 }, // Salina Turda
+                { lat: 47.97681547568596, lng: 23.710029210463983 }, // Săpânța Maramureș
+                { lat: 44.24176898548705, lng: 28.624972836567352 }, // Mamaia beach, Constanta Romania
+                { lat: 45.514984868462726, lng: 25.367120781367742 }, // Castelul Bran
+                { lat: 45.41400069963233, lng: 25.542688967869477 }, // Castelul Cantacuzino
+                { lat: 45.84540294473419, lng: 24.974654703598052 }, // Cetatea Făgărașului
+                { lat: 45.590636025881714, lng: 25.46772243904383 }, // Râșnov Citadel
+                { lat: 45.75128003852076, lng: 22.89451764709412 }, // Castelul Corvinilor
+                { lat: 45.93779536633466, lng: 23.16849218463391 }, // Cascada Clocota
+                { lat: 45.79118057373159, lng: 24.15227263780718 }, // Sibiu
+                { lat: 45.61406398110687, lng: 25.633657233308828 }, // Zoo Brasov
+                { lat: 44.97039129068407, lng: 25.97340277192685 }, // Ploiești
+                { lat: 47.15847272470692, lng: 27.601325920556415 }, // Iași - Palatul Culturii
+                { lat: 45.75372535771452, lng: 21.22571176875591 }, // Timișoara - Piața Victoriei
+                { lat: 44.43225031846924, lng: 26.103730368262513 }, // București - Palatul Parlamentului
+                { lat: 44.31924675733853, lng: 23.796229868262364 }, // Craiova - Parcul Nicolae Romanescu
+                { lat: 46.56671675589095, lng: 26.91437821045518 }, // Bacău - Parcul Cancicov
+                { lat: 41.890210736256726, lng: 12.492231448447256 }  // Roma - Colosseum
+            ];
+            locations.forEach(location => {
+                new google.maps.Marker({
+                    position: location,
+                    map: map,
+                });
+            });
+        }
+
+        function goBack() {
+            window.history.back();
+        }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=API&callback=initMap" async defer></script>
+</body>
+</html>
+
+
+<script>
+    document.getElementById('nextPageBtn').addEventListener('click', function() {
+        document.body.style.opacity = '0';
+        document.body.style.transform = 'translateX(-100%)';
+        setTimeout(function() {
+            window.location.href = 'About me2.html';
+        }, 500);
+    });
+    
+    document.addEventListener('DOMContentLoaded', function() {
+        document.body.style.opacity = '1';
+        document.body.style.transform = 'translateX(0)';
+    });
+    </script>
